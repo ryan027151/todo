@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-const Color charcoal = Color(0xFF6f6f6d) ;
+const Color charcoal = Color(0xFF2F2F2F) ;
 
 const Color duestyBlue = Color(0xFFb9bfc4); 
 
-const Color cashmere = Color(0xFFd1c8c7); 
+const Color cashmere = Color.fromRGBO(230, 222, 221, 1); 
 
-const Color denim = Color(0xFF7b8698);
+const Color denim = Color.fromRGBO(226, 175, 64, 1);
