@@ -17,11 +17,11 @@ class Home extends StatelessWidget{
             child:ListView(
               children: [
                 Container(
-                  margin:EdgeInsets.only(
+                  margin:const EdgeInsets.only(
                     top:50,
                     bottom:20,
                     ), //EdgeInsets.only
-                  child:Text(
+                  child:const Text(
                     "To do",
                      style:TextStyle(
                       fontSize:30,
