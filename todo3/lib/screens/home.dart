@@ -26,18 +26,25 @@ class _HomeState extends State<Home> {
               children: [
                 Container(
                   margin: const EdgeInsets.only(
-                    top: 50,
-                    bottom: 20,
+                    top: 100,
+                    bottom: 10,
                   ), //EdgeInsets.only
                   child: const Text(
-                    "To do",
+                    "  Today's 3s",
                     style: TextStyle(
                       color: cashmere,
-                      fontSize: 30,
+                      fontSize: 25,
                       fontWeight: FontWeight.w500,
                     ), //Textstyle
                   ), //Text
                 ), //Container
+                Divider(
+                  height: 10,
+                  indent: 15,
+                  endIndent: 100,
+                  color: cashmere,
+                  thickness: 1,
+                ),//divider
                 for (ToDo todoo in todosList)
                   ToDoItem(
                     todo: todoo,
@@ -54,7 +61,7 @@ class _HomeState extends State<Home> {
 
   void _handleToDoChange(ToDo todo) {
     setState(() {
-      todo.isDone = !todo.isDone;
+      todo.isDone == !todo.isDone;
     });
   }
 

@@ -6,4 +6,4 @@ const Color duestyBlue = Color(0xFFb9bfc4);
 
 const Color cashmere = Color.fromRGBO(230, 222, 221, 1); 
 
-const Color denim = Color.fromRGBO(226, 175, 64, 1);
+const Color denim = Color.fromRGBO(235, 175, 46, 1);

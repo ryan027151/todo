@@ -4,7 +4,8 @@ import '../model/todo.dart';
 
 class ToDoItem extends StatefulWidget {
   final ToDo todo;
-  final  onToDoChanged;
+  final Function(ToDo) onToDoChanged;
+  
   const ToDoItem({Key? key, required this.todo, required this.onToDoChanged})
       : super(key: key);
 
@@ -33,13 +34,18 @@ class _ToDoItemState extends State<ToDoItem> {
     return Container(
       child: Row(
         children: [
-          Checkbox(
+          StatefulBuilder(
+            builder: (context, setState) =>Checkbox(
             value: widget.todo.isDone,
-            onChanged: (bool? newValue) {
-              widget.onToDoChanged(widget.todo.copyWith(isDone: newValue));
-            },
             activeColor: denim,
+            onChanged: (newValue) {
+              setState(() {
+                widget.todo.isDone = !widget.todo.isDone;
+            });
+              }
+              ),
           ),
+          
           Expanded(
             child: GestureDetector(
               onTap: () {
@@ -58,11 +64,9 @@ class _ToDoItemState extends State<ToDoItem> {
                           );
                         });
                       },
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
-                        color: const Color.fromRGBO(149, 149, 148, 1),
-                        decoration:
-                            widget.todo.isDone ? TextDecoration.lineThrough : null,
+                        color: Color.fromRGBO(149, 149, 148, 1),
                       ),
                     )
                   : ListTile(
@@ -74,14 +78,15 @@ class _ToDoItemState extends State<ToDoItem> {
                         widget.todo.todoText!,
                         style: TextStyle(
                           fontSize: 16,
-                          color: const Color.fromRGBO(149, 149, 148, 1),
-                          decoration:
-                              widget.todo.isDone ? TextDecoration.lineThrough : null,
+                          color: const Color.fromARGB(255, 149, 148, 148),
+                          decoration: widget.todo.isDone
+                              ? TextDecoration.lineThrough
+                              : null,
                         ),
                       ),
                     ),
             ),
-          ),
+          )
         ],
       ),
     );
