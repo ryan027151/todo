@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
                     ), //Textstyle
                   ), //Text
                 ), //Container
-                Divider(
+                const Divider(
                   height: 10,
                   indent: 15,
                   endIndent: 100,
