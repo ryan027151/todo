@@ -63,7 +63,7 @@ class _ToDoItemState extends State<ToDoItem> {
                             widget.todo.copyWith(todoText: value),
                           );
                         });
-                      },
+                      },  
                       style: const TextStyle(
                         fontSize: 16,
                         color: Color.fromRGBO(149, 149, 148, 1),
